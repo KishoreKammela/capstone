@@ -26,23 +26,31 @@ export default function decorate(block) {
       let titleFound = false;
       while (col.firstElementChild) {
         const child = col.firstElementChild;
+        // Clear any existing classes first
+        child.className = "";
+        
         // Add classes for proper styling
         if (child.tagName === "H3") {
           // First h3 is category/label
-          if (!contentContainer.querySelector("h3, h4")) {
-            child.className = "articlecard__category";
+          if (!contentContainer.querySelector(".articlecard__category")) {
+            child.classList.add("articlecard__category");
           } else {
             // Subsequent h3 is title
-            child.className = "articlecard__title";
+            child.classList.add("articlecard__title");
             titleFound = true;
           }
         } else if (child.tagName === "P") {
-          // First p (without button) after category is title, rest are description
-          if (!titleFound && !child.querySelector("a.button")) {
-            child.className = "articlecard__title";
+          // Check if it's a button paragraph
+          if (child.querySelector("a.button")) {
+            // Button paragraph - no class needed
+            // Keep className empty
+          } else if (!titleFound) {
+            // First paragraph without button is title
+            child.classList.add("articlecard__title");
             titleFound = true;
-          } else if (!child.querySelector("a.button")) {
-            child.className = "articlecard__description";
+          } else {
+            // All subsequent paragraphs without button are description
+            child.classList.add("articlecard__description");
           }
         }
         contentContainer.append(child);

@@ -72,10 +72,13 @@ export default async function decorate(block) {
         const contentWrapper = document.createElement('div');
         contentWrapper.className = 'footer__content';
         paragraphs.forEach((p) => {
+          // Remove any existing classes (like title, etc.)
+          p.className = '';
           // First paragraph with © is copyright
           if (p.textContent.includes('©')) {
-            p.className = 'footer__copyright';
+            p.classList.add('footer__copyright');
           }
+          // All other paragraphs are description (no class needed, styled via .footer__content p)
           contentWrapper.append(p);
         });
         footer.append(contentWrapper);

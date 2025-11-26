@@ -87,7 +87,9 @@ body.appear {
 
 header {
     /* Header height will be managed by nav-wrapper padding and nav height */
-    min-height: calc(var(--nav-height) + 100px); /* nav height + 50px top + 50px bottom padding */
+    min-height: calc(
+        var(--nav-height) + 100px
+    ); /* nav height + 50px top + 50px bottom padding */
 }
 
 header .header,
@@ -247,7 +249,7 @@ main > .section {
 }
 
 main > .section > div {
-    /* max-width: 1200px; */
+    max-width: 1200px;
     margin: auto;
     padding: 0 32px;
 }
@@ -268,4 +270,13 @@ main .section.highlight {
     background-color: var(--light-color);
     margin: 0;
     padding: 40px 0;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
 }

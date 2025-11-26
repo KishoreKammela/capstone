@@ -6,7 +6,7 @@
 /* Wrapper - max-width container */
 .section.articles-container > .articles-wrapper,
 .section.articles-container > .default-content-wrapper {
-    max-width: 1136px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
 }

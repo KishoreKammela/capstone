@@ -6,7 +6,7 @@
 /* Wrapper - max-width container */
 .section.articlecard-container > .articlecard-wrapper,
 .section.articlecard-container > .default-content-wrapper {
-    max-width: 1136px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
 }
@@ -47,7 +47,8 @@
 .articlecard__content .articlecard__category,
 .articlecard__content h3:first-child,
 .articlecard__content h4:first-child,
-.articlecard__content p:first-of-type:not(.articlecard__title):not(.articlecard__description) {
+.articlecard__content
+    p:first-of-type:not(.articlecard__title):not(.articlecard__description) {
     font-family: var(--body-font-family);
     font-size: var(--body-font-size-xs);
     font-weight: 600;
