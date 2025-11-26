@@ -1,0 +1,162 @@
+.homebanner {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.homebanner__slides {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 100px;
+}
+
+.homebanner__slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.homebanner__slide.is-active {
+    display: block;
+}
+
+.homebanner__media {
+    position: relative;
+    width: 100%;
+    max-height: 640px;
+    overflow: hidden;
+}
+
+.homebanner__media picture,
+.homebanner__media img {
+    width: 100%;
+    display: block;
+    height: auto;
+    max-height: 640px;
+    object-fit: cover;
+}
+
+.homebanner__content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -50px;
+    width: min(70%, 1136px);
+    padding: 40px 48px;
+    background: white;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.homebanner__title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(32px, 4vw, 44px);
+    margin: 0 0 12px;
+    color: var(--text-color);
+}
+
+.homebanner__description {
+    font-size: var(--body-font-size-m);
+    margin: 0 0 24px;
+    color: var(--text-color);
+}
+
+.homebanner__cta .button {
+    background: #ffd200;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+}
+
+.homebanner__controls {
+    position: absolute;
+    right: 40px;
+    bottom: -35px;
+    display: flex;
+    gap: 12px;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.homebanner__control {
+    pointer-events: auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.homebanner__indicators {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.homebanner__content .homebanner__indicators {
+    margin-top: 24px;
+}
+
+.homebanner__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    padding: 0;
+}
+
+.homebanner__indicator.is-active {
+    background: #000;
+}
+
+@media (max-width: 767px) {
+    .homebanner {
+        padding: 0;
+    }
+
+    .homebanner__slide {
+        border-radius: 0;
+    }
+
+    .homebanner__content {
+        position: relative;
+        left: auto;
+        transform: none;
+        bottom: auto;
+        width: auto;
+        margin: -32px 16px 0;
+        padding: 24px 28px;
+    }
+
+    .homebanner__slides {
+        padding-bottom: 0;
+    }
+
+    .homebanner__media {
+        max-height: 400px;
+    }
+
+    .homebanner__media picture,
+    .homebanner__media img {
+        max-height: 400px;
+    }
+
+    .homebanner__controls {
+        position: static;
+        justify-content: flex-end;
+        margin: 16px 16px 0;
+    }
+}

@@ -163,4 +163,31 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // Handle scroll-based header collapse/expand
+  let ticking = false;
+  const SCROLL_THRESHOLD = 10; // pixels to scroll before collapsing
+
+  function updateHeaderState() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    if (scrollY > SCROLL_THRESHOLD) {
+      navWrapper.classList.add('header-scrolled');
+    } else {
+      navWrapper.classList.remove('header-scrolled');
+    }
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeaderState);
+      ticking = true;
+    }
+  }
+
+  // Set initial state
+  updateHeaderState();
+
+  // Listen for scroll events
+  window.addEventListener('scroll', onScroll, { passive: true });
 }
