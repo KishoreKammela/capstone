@@ -121,6 +121,9 @@ h1 {
 }
 h2 {
     font-size: var(--heading-font-size-xl);
+    width: min(70%, 1136px);
+    max-width: 1200px;
+    margin: 24px 0 40px;
 }
 h3 {
     font-size: var(--heading-font-size-l);

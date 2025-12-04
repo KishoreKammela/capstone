@@ -1,0 +1,230 @@
+/* Section - full width */
+.section.carousel-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Override default section max-width - must be more specific than main > .section > div */
+main > .section.carousel-container,
+.section.carousel-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+main > .section.carousel-container > div,
+.section.carousel-container > div {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+main .carousel-container h2 {
+    margin: 24px auto 40px;
+}
+
+main .carousel {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    /* Hide scrollbar for all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    position: relative;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+main .carousel::-webkit-scrollbar {
+    display: none;
+}
+
+main .carousel__slide {
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+main .carousel__media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
+    overflow: hidden;
+}
+
+main .carousel__media picture,
+main .carousel__media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+main .carousel__content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: min(70%, 1136px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 48px;
+    background: white;
+    z-index: 1;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+main .carousel__content h2 {
+    font-family: var(--heading-font-family);
+    font-size: clamp(32px, 4vw, 44px);
+    margin: 0 0 12px;
+    color: var(--text-color);
+}
+
+/* Ensure h2 elements and links inside h2 don't get button styling */
+main .carousel__content h2,
+main .carousel__content h2 a {
+    background: transparent;
+    color: var(--text-color);
+    text-transform: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    font-weight: 600;
+    display: inline;
+}
+
+main .carousel__content p {
+    font-size: var(--body-font-size-m);
+    margin: 0 0 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+main .carousel-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+main .carousel__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 40px;
+    background: white;
+    position: relative;
+}
+
+main .carousel__indicators {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main .carousel__controls {
+    margin-left: auto;
+}
+
+main .carousel__controls {
+    display: flex;
+    gap: 12px;
+    pointer-events: none;
+}
+
+main .carousel__control {
+    pointer-events: auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+main .carousel__control:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+main .carousel__indicators {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 0;
+}
+
+main .carousel__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+main .carousel__indicator:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+main .carousel__indicator.is-active {
+    background: #000;
+}
+
+@media (max-width: 767px) {
+    main .carousel {
+        padding: 0;
+    }
+
+    main .carousel__slide {
+        min-height: 400px;
+    }
+
+    main .carousel__media {
+        max-height: 400px;
+    }
+
+    main .carousel__media picture,
+    main .carousel__media img {
+        max-height: 400px;
+    }
+
+    main .carousel__content {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: calc(100% - 32px);
+        max-width: 100%;
+        margin: 0;
+        padding: 24px 28px;
+    }
+
+    main .carousel__navigation {
+        padding: 16px 0;
+        gap: 16px;
+    }
+}

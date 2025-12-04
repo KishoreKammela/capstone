@@ -1,0 +1,114 @@
+/* Section - full width */
+.section.featured-article-container {
+    width: 100%;
+}
+
+/* Wrapper - max-width container */
+.section.featured-article-container > .featured-article-wrapper,
+.section.featured-article-container > .default-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.featured-article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #ebebeb;
+    overflow: hidden;
+}
+
+.featured-article__image {
+    width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.featured-article__image picture,
+.featured-article__image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.featured-article__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ebebeb;
+    padding: 32px 24px;
+    gap: 16px;
+}
+
+.featured-article__category {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+    margin: 0;
+    line-height: 1.75;
+}
+
+.featured-article__content h2 {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-font-size-m);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.featured-article__content p:not(.featured-article__category) {
+    font-size: var(--body-font-size-m);
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.featured-article__content .button {
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 8px;
+    display: inline-block;
+    width: fit-content;
+}
+
+@media (min-width: 900px) {
+    .section.featured-article-container > .featured-article-wrapper,
+    .section.featured-article-container > .default-content-wrapper {
+        padding: 0 32px;
+    }
+
+    .featured-article {
+        flex-direction: row;
+        background: transparent;
+    }
+
+    .featured-article__image {
+        width: 62.4%;
+        max-width: 709px;
+        height: auto;
+    }
+
+    .featured-article__image picture,
+    .featured-article__image img {
+        height: 100%;
+        min-height: 400px;
+    }
+
+    .featured-article__content {
+        width: 37.6%;
+        padding: 56px 48px;
+        justify-content: center;
+    }
+
+    .featured-article__content h2 {
+        font-size: var(--heading-font-size-l);
+    }
+}
